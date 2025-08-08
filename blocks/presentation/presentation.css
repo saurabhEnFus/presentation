@@ -1,0 +1,96 @@
+@import url('../../scripts/reveal.js/dist/reveal.css');
+/* @import url('../../scripts/reveal.js/plugin/highlight/monokai.css'); */
+@import url('../../scripts/reveal.js/dist/theme/serif.css');
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.reveal .sl-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 75px;
+  align-items: center;
+}
+
+.reveal h1 {
+  font-size: 2.5rem;
+}
+
+.reveal h2 {
+  font-size: 1.5rem;
+}
+
+.reveal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reveal li {
+  list-style: none;
+  padding: 5px;
+  font-size: large;
+}
+
+.reveal p {
+  line-height: normal;
+}
+
+.sl-3-liEl li {
+  /* list-style: disc; */
+}
+
+.sl-4-mainEl {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  gap: 20px;
+  width: 100%;
+
+  p {
+    font-size: 15px;
+  }
+
+  li {
+    list-style: disc;
+  }
+}
+
+.sl-4-sub {
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sl-4-sub ul li {
+  font-size: 15px;
+}
+
+.sl-5 {
+  p {
+    font-size: 20px;
+  }
+
+  td {
+    font-size: 25px;
+  }
+}
+
+/* .reveal img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+} */
+
+/* .reveal li::before {
+  content: "✦ ";
+  color: #ff9800;
+  margin-right: 0.3em;
+} */
