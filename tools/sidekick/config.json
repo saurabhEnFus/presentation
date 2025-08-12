@@ -1,12 +1,50 @@
 {
-  "project": "presentation",
+  "project": "Enfuse franklin",
+
   "plugins": [
     {
       "id": "library",
       "title": "Library",
-      "environments": ["edit"],
+      "environments": [ "edit" ],
       "url": "/tools/sidekick/library.html",
-      "includePaths": ["**.docx**"]
+      "includePaths": [ "**.docx**"]
+    },
+    {
+      "id": "asset-library",
+      "title": "AEM Assets",
+      "environments": [
+        "edit"
+      ],
+      "url": "https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/franklin/asset-selector.html?rail=false",
+      "isPalette": true,
+      "includePaths": [
+        "**.docx**"
+      ],
+      "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
+    },
+    {
+      "id": "tools",
+      "title": "Tools",
+      "isContainer" : true
+    },
+    {
+      "containerId" : "tools",
+      "id": "youtube",
+      "title": "YouTube",
+      "environments": [
+        "edit"
+      ],
+      "url": "https://www.youtube.com",
+      "passReferrer": true
+    },
+    {
+      "containerId" : "tools",
+      "id": "google",
+      "title": "Google",
+      "environments": [
+        "edit"
+      ],
+      "url": "https://www.google.com"
     }
   ]
 }
