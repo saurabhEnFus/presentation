@@ -42,55 +42,14 @@ body {
   line-height: normal;
 }
 
-.sl-3-liEl li {
-  /* list-style: disc; */
-}
-
-.sl-4-mainEl {
+/* .reveal .slides .sl-end {
   display: flex;
-  flex-direction: row;
-  text-align: left;
-  gap: 20px;
-  width: 100%;
-
-  p {
-    font-size: 15px;
-  }
-
-  li {
-    list-style: disc;
-  }
-}
-
-.sl-4-sub {
   flex-direction: column;
+  width: 100%;
+}
+
+.reveal .slides .sl-end > div:nth-child(2),
+.sl-end > div:nth-child(3) {
+  display: inline-block;
   width: 50%;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.sl-4-sub ul li {
-  font-size: 15px;
-}
-
-.sl-5 {
-  p {
-    font-size: 20px;
-  }
-
-  td {
-    font-size: 25px;
-  }
-}
-
-/* .reveal img {
-  height: 100% !important;
-  width: 100% !important;
-  object-fit: cover;
-} */
-
-/* .reveal li::before {
-  content: "✦ ";
-  color: #ff9800;
-  margin-right: 0.3em;
 } */
