@@ -11,6 +11,33 @@ const mainDiv = document.createElement('div');
     const section = document.createElement('section');
     row.className = row.lastElementChild.textContent
     row.removeChild(row.lastElementChild);
+
+    //banner slide
+    const picture = row.querySelector('.sl-banner picture');
+
+    if (picture) {
+      const imgSrc = picture.querySelector('img').src;
+      section.setAttribute('data-background-image', imgSrc);
+      row.removeChild(row.firstElementChild)
+    }
+
+    // list slide
+    const listItems = row.querySelectorAll('.sl-list ul li');
+    console.log(listItems);
+    
+
+    if (listItems) {
+      const ulElement = document.createElement('ul');
+  
+      listItems.forEach((item) => {
+         const li = item;
+         li.classList.add('fragment')
+         ulElement.append(li)
+      });
+      row.append(ulElement) 
+    }
+    
+
     section.append(row);
     mainDiv.append(section);
   });
