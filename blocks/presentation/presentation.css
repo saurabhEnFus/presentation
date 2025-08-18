@@ -1,6 +1,6 @@
 @import url('../../scripts/reveal.js/dist/reveal.css');
 /* @import url('../../scripts/reveal.js/plugin/highlight/monokai.css'); */
-@import url('../../scripts/reveal.js/dist/theme/serif.css');
+@import url('../../scripts/reveal.js/dist/theme/white.css');
 
 
 body {
@@ -23,6 +23,10 @@ body {
   font-size: 2.5rem;
 }
 
+.slides {
+  width: 1480px !important;
+}
+
 .reveal h2 {
   font-size: 1.5rem;
 }
@@ -42,10 +46,56 @@ body {
   line-height: normal;
 }
 
+.slide-banner {
+  text-align: left;
+  .banner-main {
+    margin-top: 220px;
+    margin-left: 26px;
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}
+
+.slide-listview {
+  text-align: left;
+  top: 0 !important;
+}
+
+.slide-listview li {
+  list-style: square;
+  padding: 10px;
+  font-size: 1.6rem;
+}
+
+.slide-listview h1 {
+  border-bottom: solid 2px #89238a;
+  padding: 10px;
+}
+
+.slide-container-coloumn,.slide-container-row {
+  top: 0px !important;
+  text-align: left;
+  h1 {
+    border-bottom: solid 2px #89238a;
+    padding: 10px;
+  }
+}
+
 .slide-container-coloumn .slide-container-main {
   display: flex !important;
-  gap: 75px;
+  gap: 50px;
   text-align: left;
+  width: 100%;
 
   p {
     font-size: 1rem;
@@ -53,12 +103,118 @@ body {
 
   li {
     list-style: disc;
+    font-size: 1rem;
   }
+
+  .slide-container-left {
+    background-color: #f2f2f2;
+    h2 {
+      border-bottom: solid 2px #da79c9;
+      padding: 5px;
+    }
+  }
+  .slide-container-right {
+    background-color: #eeece1;
+    h2 {
+      border-bottom: solid 2px #94d7db;
+      padding: 5px;
+    }
+  }
+
+  .slide-container-left, .slide-container-right{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 50%;
+  }
+
 }
 
 .slide-container-row  section {
-   
-    p {
-      font-size: 1rem;
+  text-align: left;
+
+  .slide-container-top {
+    background-color: #f2f2f2;
+    h2 {
+      border-bottom: solid 2px #da79c9;
+      padding: 5px;
     }
+  }
+  .slide-container-bottom {
+    background-color: #eeece1;
+    h2 {
+      border-bottom: solid 2px #94d7db;
+      padding: 5px;
+    }
+  }
+
+  .slide-container-top, .slide-container-bottom{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+
+  li {
+    list-style: disc;
+    font-size: 1rem;
+  }
+   
+  p {
+    font-size: 1rem;
+  }
+}
+
+.slide-container-table {
+  text-align: left;
+  top: 0px !important;
+  h1 {
+    border-bottom: solid 2px #89238a;
+    padding: 10px;
+  }
+
+  h2 {
+    padding: 10px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  table {
+    width: -webkit-fill-available !important;
+  }
+
+  tbody {
+    border: solid 1px;
+    font-size: 2rem;
+  }
+  td {
+    border: solid 1px;
+    font-size: 1.5rem;
+  }
+
+  .table-top {
+    background-color: #fff8f7;
+    border: solid 1px red;
+    padding: 20px;
+  }
+
+  .table-bottom {
+    margin-top: 20px;
+  }
+}
+
+.slide-image-list {
+  top: 0px !important;
+  h1 {
+    border-bottom: solid 2px #89238a;
+    padding: 10px;
+    text-align: left;
+  }
+
+  section {
+    margin-top: 20px;
+  }
 }

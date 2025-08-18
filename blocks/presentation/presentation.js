@@ -7,8 +7,8 @@ export default function decorate(block) {
   function welcomeSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
     return `
-    <section class="">
-      ${titileEl?.innerHTML}
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl?.innerText}</h1>
       ${descFirstEl?.innerHTML}
       ${descSecondEl?.innerHTML}
     </section>
@@ -18,8 +18,13 @@ export default function decorate(block) {
   function bannerSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
     const imgSrc = titileEl?.querySelector('img').src
+
     return `
-    <section data-background-image=${imgSrc}>
+    <section data-background-image=${imgSrc} class="${classNameEl.innerText}">
+    <div class="banner-main">
+    ${descFirstEl?.innerHTML}
+    ${descSecondEl?.innerHTML}
+    </div>
     </section>
     `
   }
@@ -37,8 +42,8 @@ export default function decorate(block) {
     });
 
     return `
-    <section class="">
-      ${titileEl.innerHTML}
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl.innerText}</h1>
       ${ulElement.innerHTML}
     </section>
     `
@@ -52,10 +57,10 @@ export default function decorate(block) {
        <section class="${classNameEl.innerText}">
          <h1>${titileEl.innerText}</h1>
          <div class="slide-container-main">
-           <div class="slide-container-left">
+           <div class="slide-container-left fragment">
               ${descFirstEl.innerHTML}
            </div>
-           <div class="slide-container-right">
+           <div class="slide-container-right fragment">
             ${descSecondEl.innerHTML}
            </div>
          </div>
@@ -78,14 +83,47 @@ export default function decorate(block) {
     </section>
     `
     }
+  }
+
+  function tableSlide(row) {
+    const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
+    return `
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl?.innerText}</h1>
+      <div class="table-top fragment">${descFirstEl.innerHTML}</div>
+      <div class="table-bottom fragment">${descSecondEl.innerHTML}</div>
+    </section>
+    `
+  }
+
+  function imageListSlide(row) {
+    const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
+
+    console.log(descFirstEl);
     
+    const listItems = descFirstEl?.querySelectorAll('picture');
+
+    const divElement = document.createElement('div');
+  
+    listItems?.forEach((item) => {
+      const section = document.createElement('section')
+      section.append(item)
+      divElement.append(section)
+    });
+
+    return `
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl.innerText}</h1>
+      ${divElement.innerHTML}
+    </section>
+    `
   }
 
   function thankyouSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
     return `
-    <section class="">
-      ${titileEl?.innerHTML}
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl?.innerText}</h1>
       ${descFirstEl?.innerHTML}
       ${descSecondEl?.innerHTML}
     </section>
@@ -116,6 +154,14 @@ export default function decorate(block) {
         break;
       case "slide-container-row":
         section = containerSlide(row);
+        mainDiv.insertAdjacentHTML('beforeend', section);
+        break;
+      case "slide-container-table":
+        section = tableSlide(row);
+        mainDiv.insertAdjacentHTML('beforeend', section);
+        break;
+      case "slide-image-list":
+        section = imageListSlide(row);
         mainDiv.insertAdjacentHTML('beforeend', section);
         break;
       case "slide-thankyou":
