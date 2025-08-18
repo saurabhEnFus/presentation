@@ -44,6 +44,43 @@ export default function decorate(block) {
     `
   }
 
+  function containerSlide(row) {
+    const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
+
+    if (classNameEl.textContent === "slide-container-coloumn") {
+      return `
+       <section class="${classNameEl.innerText}">
+         <h1>${titileEl.innerText}</h1>
+         <div class="slide-container-main">
+           <div class="slide-container-left">
+              ${descFirstEl.innerHTML}
+           </div>
+           <div class="slide-container-right">
+            ${descSecondEl.innerHTML}
+           </div>
+         </div>
+       </section>
+      `
+    } else {
+    return `
+    <section class="${classNameEl.innerText}">
+      <h1>${titileEl.innerText}</h1>
+      <section>
+        <div class="slide-container-top">
+          ${descFirstEl.innerHTML}
+        </div>
+      </section>
+      <section>
+        <div class="slide-container-bottom">
+          ${descSecondEl.innerHTML}
+        </div>
+      </section>
+    </section>
+    `
+    }
+    
+  }
+
   function thankyouSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
     return `
@@ -71,6 +108,14 @@ export default function decorate(block) {
         break;
       case "slide-listview":
         section = listViewSlide(row);
+        mainDiv.insertAdjacentHTML('beforeend', section);
+        break;
+      case "slide-container-coloumn":
+        section = containerSlide(row);
+        mainDiv.insertAdjacentHTML('beforeend', section);
+        break;
+      case "slide-container-row":
+        section = containerSlide(row);
         mainDiv.insertAdjacentHTML('beforeend', section);
         break;
       case "slide-thankyou":
