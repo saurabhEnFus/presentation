@@ -44,6 +44,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl.innerText}</h1>
+      <div class="logo"><span>En</span>ꟻuse</div>
       ${ulElement.innerHTML}
     </section>
     `
@@ -56,6 +57,7 @@ export default function decorate(block) {
       return `
        <section class="${classNameEl.innerText}">
          <h1>${titileEl.innerText}</h1>
+         <div class="logo"><span>En</span>ꟻuse</div>
          <div class="slide-container-main">
            <div class="slide-container-left fragment">
               ${descFirstEl.innerHTML}
@@ -70,6 +72,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl.innerText}</h1>
+      <div class="logo"><span>En</span>ꟻuse</div>
       <section>
         <div class="slide-container-top">
           ${descFirstEl.innerHTML}
@@ -90,6 +93,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl?.innerText}</h1>
+      <div class="logo"><span>En</span>ꟻuse</div>
       <div class="table-top fragment">${descFirstEl.innerHTML}</div>
       <div class="table-bottom fragment">${descSecondEl.innerHTML}</div>
     </section>
@@ -98,8 +102,6 @@ export default function decorate(block) {
 
   function imageListSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
-
-    console.log(descFirstEl);
     
     const listItems = descFirstEl?.querySelectorAll('picture');
 
@@ -114,6 +116,7 @@ export default function decorate(block) {
     return `
     <section class="${classNameEl.innerText}">
       <h1>${titileEl.innerText}</h1>
+      <div class="logo"><span>En</span>ꟻuse</div>
       ${divElement.innerHTML}
     </section>
     `
@@ -121,11 +124,14 @@ export default function decorate(block) {
 
   function thankyouSlide(row) {
     const [classNameEl, titileEl, descFirstEl, descSecondEl] = row.children
+    const imgSrc = titileEl?.querySelector('img').src
+
     return `
-    <section class="${classNameEl.innerText}">
-      <h1>${titileEl?.innerText}</h1>
-      ${descFirstEl?.innerHTML}
-      ${descSecondEl?.innerHTML}
+    <section data-background-image=${imgSrc} class="${classNameEl.innerText}">
+    <div class="thankyou-main">
+    ${descFirstEl?.innerHTML}
+    ${descSecondEl?.innerHTML}
+    </div>
     </section>
     `
   }
